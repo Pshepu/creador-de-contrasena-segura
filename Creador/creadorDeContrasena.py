@@ -10,10 +10,10 @@ def contrasena_segura():
         caracteres = string.ascii_letters + string.digits + string.punctuation  # Caracteres posibles
         contrasena = "".join(random.choice(caracteres) for i in range(longitud_de_contrasena))  # Genera la contraseña
         etiqueta_contrasena.config(text=f"La contraseña generada es: {contrasena}")  # Muestra la contraseña
-        # Guarda la contraseña en una variable para usarla en copiar
+        # Guarda la contraseña en una variable para usarla en el boton copiar contraseña
         etiqueta_contrasena.password = contrasena
     except ValueError:
-        messagebox.showerror("Error", "Por favor, ingrese un número válido.")  # Manejo de errores
+        messagebox.showerror("Error", "Por favor, ingrese un número válido.")  # Manejo de errores, impide que ingresen caracteres
 
 # Función para copiar la contraseña al portapapeles
 def copiar_contrasena():
